@@ -1,0 +1,75 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --_hue: 200;
+  --_size: 1.5rem;
+  --_radius: 0.2em;
+  --_tspeed_fast: 150ms;
+  --_tspeed_slow: 400ms;
+  --_ttype_squish: cubic-bezier(0.86, -0.1, 0.27, 1.15);
+
+  /* Ligth Theme */
+  --bg--light: var(--_hue) 80% 99%;
+  --txt--light: var(--_hue) 80% 8%;
+  --muted--light: var(--_hue) 20% 70%;
+  --accent--light: var(--_hue) 70% 60%;
+  --secondary--light: calc(var(--_hue) - 195) 70% 60%;
+
+  /* Dark Theme */
+  --bg--dark: var(--_hue) 80% 12%;
+  --txt--dark: var(--_hue) 80% 99%;
+  --muted--dark: var(--_hue) 80% 99%;
+  --accent--dark: var(--_hue) 65% 50%;
+  --secondary--dark: calc(var(--_hue) - 195) 65% 50%;
+
+  /* Custom Theme */
+  --bg--custom: 220 80% 98%;
+  --txt--custom: 200 80% 9%;
+  --muted--custom: 210 80% 50%;
+  --accent--custom: 180 65% 50%;
+  --secondary--custom: 280 65% 50%;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: var(--bg--light);
+    --txt: var(--txt--light);
+    --muted: var(--muted--light);
+    --accent: var(--accent--light);
+    --secondary: var(--secondary--light);
+    color-scheme: light;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--bg--dark);
+    --txt: var(--txt--dark);
+    --muted: var(--muted--dark);
+    --accent: var(--accent--dark);
+    --secondary: var(--secondary--dark);
+    color-scheme: dark;
+  }
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #fff;
+  color: blue;
+}
+
+.container {
+  margin-inline: max((calc(100vw - 70rem) / 2), 2rem);
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+}
